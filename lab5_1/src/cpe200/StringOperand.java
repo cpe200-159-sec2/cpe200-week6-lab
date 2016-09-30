@@ -9,6 +9,7 @@ public class StringOperand implements IOperand {
 
     @Override
     public String getOperand() {
+
         return operand;
     }
 }
