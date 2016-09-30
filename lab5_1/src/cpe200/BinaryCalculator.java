@@ -5,8 +5,8 @@ import java.math.BigDecimal;
 
 
 public class BinaryCalculator {
-    public IOperand firstOperand;
-    public IOperand secondOperand;
+    private IOperand firstOperand;
+    private IOperand secondOperand;
     private BigDecimal first;
     private BigDecimal second;
 

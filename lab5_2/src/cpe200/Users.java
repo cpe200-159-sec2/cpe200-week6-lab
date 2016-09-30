@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 public class Users {
     public ArrayList<IUser> userList;
-    public User(){
+    public Users(){
         userList = new ArrayList<>();
     }
 
@@ -21,7 +21,7 @@ public class Users {
     {
         IUser user = new User();
         user.setUserName(userName);
-        user.getPassword(password);
+        user.setPassword(password);
         if(user != null)
             userList.add(user);
     }
