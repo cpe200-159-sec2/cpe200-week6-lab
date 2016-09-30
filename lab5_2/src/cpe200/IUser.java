@@ -6,6 +6,6 @@ package cpe200;
 public interface IUser {
     String getUserName();
     String getPassword();
-    String setUserName(String u);
-    int setPassword(String p);
+    String setUserName(String u) throws Exception;
+    int setPassword(String p) throws Exception;
 }
