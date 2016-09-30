@@ -9,73 +9,60 @@ import java.util.ArrayList;
 public class Users {
     public ArrayList<IUser> userList;
 
-    public Users() {
-        userList = new ArrayList<IUser>();
+    public Users(){
+        userList = new ArrayList<>();
     }
-
-    public void addUser(IUser user)
-    {
+    public void addUser(IUser user) {
         userList.add(user);
     }
 
-    public void addUser(String userName, String password)
-    {
-        User user =new User();
-        user.setUserName(userName);
-        user.setPassword(password);
-        userList.add(user);
+    public void addUser(String userName, String password) {
+        IUser tmp = new User();
+
+        tmp.setPassword(password) ;
+        tmp.setUserName(userName);
+        userList.add(tmp);
     }
 
-    public void deleteUser(IUser user)
-    {
-        if(!exists(user))
-        {
+    public void exceptioncheck (IUser user){
+        if(userList.isEmpty()){
             throw new RuntimeException();
         }
-        else
-        {
-            userList.remove(user);
-        }
     }
 
-    public boolean exists(IUser user)
-    {
-        return userList.contains(user);
+    public void deleteUser(IUser user) {
+        exceptioncheck(user);
+        userList.remove(user);
     }
 
-    public boolean usernameExists(String username)
-    {
-        for(int i=0;i<userList.size();i++)
-        {
-            if(userList.get(i).getUserName().equals(username))
-            {
+    public boolean exists(IUser user) {
+        return  userList.contains(user) ;
+    }
+
+    public boolean usernameExists(String username) {
+        for(int i = 0 ; i<userList.size() ; i++){
+            if(userList.get(i).getUserName() == username){
                 return true;
             }
         }
-        return false;
+        return  false;
     }
 
     /* This method should return null when the user with username is not in the list */
-    public IUser getUserByUsername(String userName)
-    {
-
-        for(int i=0;i<userList.size();i++)
-        {
-            if(userList.get(i).getUserName().equals(userName))
-            {
+    public IUser getUserByUsername(String userName) {
+        for(int i = 0 ; i<userList.size() ; i++){
+            if(userList.get(i).getUserName() == userName){
                 return userList.get(i);
             }
         }
-        return null;
+        return  null;
     }
 
-    public int count()
-    {
+    public int count() {
         return userList.size();
     }
 
-    public IUser[] getUserArray()
-    {
+    public User[] getUserArray() {
         return userList.toArray(new User[userList.size()]);
     }
 }
