@@ -5,7 +5,7 @@ package cpe200;
  */
 public class DoubleOperand implements IOperand{
     private String operand;
-    
+
     public DoubleOperand(Double d) {
         this.operand = Double.toString(d);
     }
