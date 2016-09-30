@@ -11,4 +11,8 @@ public class StringOperand implements IOperand {
     public String getOperand() {
         return operand;
     }
+    public void setOperand(String operand){
+        this.operand=operand;
+
+    }
 }
