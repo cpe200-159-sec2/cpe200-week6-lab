@@ -17,7 +17,7 @@ public class User implements IUser {
     }
 
     @Override
-    public String setUserName(String userName) throws Exception {
+    public String setUserName(String userName) {
         if (null != userName && !userName.matches(USERNAME_PATTERN)) {
             throw new RuntimeException("Invalid username");
         }
@@ -27,7 +27,7 @@ public class User implements IUser {
     }
 
     @Override
-    public int setPassword(String password) throws Exception {
+    public int setPassword(String password) {
         if (null != password && !password.matches(PASSWORD_PATTERN)) {
             throw new RuntimeException("Invalid password");
         }
